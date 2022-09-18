@@ -1,0 +1,29 @@
+# Build artifacts
+bin/
+build/
+dist/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+jbuild/
+jbuild_d/
+
+# Beef workspace
+BeefSpace.user.toml
+*.bf.cache
+*.bf.pdb
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Logs and data
+*.log
+*.pcap
+data/scratch/
+.DS_Store

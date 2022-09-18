@@ -1,0 +1,17 @@
+FileVersion = 1
+
+[Project]
+Name = "Keel"
+StartupObject = "Keel.Program"
+TargetType = "BeefLib"
+
+[Configs.Debug]
+BuildDir = "build/debug"
+TargetName = "keel_d"
+
+[Configs.Release]
+BuildDir = "build/release"
+TargetName = "keel"
+
+[Dependencies]
+corlib = "*"
