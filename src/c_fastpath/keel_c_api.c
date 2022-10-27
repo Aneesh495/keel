@@ -182,10 +182,9 @@ bool keel_engine_feed_nmea(keel_engine_t *engine, const char *nmea) {
     
     char *tokens[10];
     int token_count = 0;
-    char *token = strtok(buf, ",");
-    while (token && token_count < 10) {
-        tokens[token_count++] = token;
-        token = strtok(NULL, ",");
+    char *cursor = buf;
+    while (cursor && token_count < 10) {
+        tokens[token_count++] = strsep(&cursor, ",");
     }
     
     if (token_count < 6) return false;

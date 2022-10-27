@@ -17,11 +17,11 @@ uint8_t keel_decode_ascii_6bit(char c) {
     if (u < 48 || u > 119 || (u > 87 && u < 96)) {
         return 0;
     }
-    uint8_t val = (uint8_t)((u - 48) & 0x3F);
+    uint8_t val = (uint8_t)(u - 48);
     if (val > 40) {
         val = (uint8_t)(val - 8);
     }
-    return val;
+    return (uint8_t)(val & 0x3F);
 }
 
 uint8_t keel_nmea_checksum(const char *sentence) {
