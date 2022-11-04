@@ -34,8 +34,14 @@ $(STATIC_LIB): $(C_OBJS)
 $(TEST_BIN): dirs $(STATIC_LIB) $(TEST_DIR)/c_test_runner.c
 	$(CC) $(CFLAGS) -I$(C_SRC_DIR) $(TEST_DIR)/c_test_runner.c $(STATIC_LIB) -lm -o $@
 
+$(BENCH_BIN): dirs $(STATIC_LIB) $(BENCH_DIR)/fastpath_bench.c
+	$(CC) $(CFLAGS) -I$(C_SRC_DIR) $(BENCH_DIR)/fastpath_bench.c $(STATIC_LIB) -lm -o $@
+
 test: $(TEST_BIN)
 	@./$(TEST_BIN)
+
+bench: $(BENCH_BIN)
+	@./$(BENCH_BIN)
 
 clean:
 	rm -rf $(BUILD_DIR) $(BIN_DIR) *.o *.a
