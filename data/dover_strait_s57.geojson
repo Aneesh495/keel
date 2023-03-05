@@ -1,0 +1,259 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "chart_id": "GB4X0001",
+    "name": "Dover Strait to Western Approaches"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "TSELNE",
+        "name": "Dover Strait Southwestbound Lane",
+        "traffic_direction_deg": 230.0,
+        "speed_limit_knots": 15.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.35,
+              51.25
+            ],
+            [
+              1.55,
+              51.35
+            ],
+            [
+              1.7,
+              51.1
+            ],
+            [
+              1.5,
+              51.0
+            ],
+            [
+              1.35,
+              51.25
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "TSELNE",
+        "name": "Dover Strait Northeastbound Lane",
+        "traffic_direction_deg": 50.0,
+        "speed_limit_knots": 15.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.55,
+              51.05
+            ],
+            [
+              1.75,
+              51.15
+            ],
+            [
+              1.9,
+              50.9
+            ],
+            [
+              1.7,
+              50.8
+            ],
+            [
+              1.55,
+              51.05
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "DEPARE",
+        "name": "Goodwin Sands North Shoal",
+        "min_depth_m": 0.5,
+        "max_depth_m": 3.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.45,
+              51.32
+            ],
+            [
+              1.52,
+              51.34
+            ],
+            [
+              1.56,
+              51.25
+            ],
+            [
+              1.48,
+              51.22
+            ],
+            [
+              1.45,
+              51.32
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "DEPARE",
+        "name": "The Ridge / Le Colbart Shoal",
+        "min_depth_m": 1.2,
+        "max_depth_m": 4.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.35,
+              50.92
+            ],
+            [
+              1.42,
+              50.95
+            ],
+            [
+              1.48,
+              50.85
+            ],
+            [
+              1.4,
+              50.82
+            ],
+            [
+              1.35,
+              50.92
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "DEPARE",
+        "name": "Varne Bank Shoal",
+        "min_depth_m": 2.0,
+        "max_depth_m": 5.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.3,
+              51.02
+            ],
+            [
+              1.38,
+              51.08
+            ],
+            [
+              1.44,
+              50.98
+            ],
+            [
+              1.36,
+              50.92
+            ],
+            [
+              1.3,
+              51.02
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "SOUNDG",
+        "depth_m": 28.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.45,
+          51.15
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "SOUNDG",
+        "depth_m": 32.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.5,
+          51.1
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "SOUNDG",
+        "depth_m": 34.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.55,
+          51.05
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "SOUNDG",
+        "depth_m": 24.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4,
+          51.2
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "SOUNDG",
+        "depth_m": 4.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.46,
+          51.25
+        ]
+      }
+    }
+  ]
+}
