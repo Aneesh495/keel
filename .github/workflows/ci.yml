@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Compile C fastpath library and test runner
+      run: |
+        make clean
+        make all
+
+    - name: Run native verification test suite
+      run: |
+        make test
+
+    - name: Run fastpath micro-benchmarks
+      run: |
+        make bench
+
+    - name: Run automated protocol conformance suite
+      run: |
+        python3 tools/conformance_suite.py
+
+    - name: Run COLREGs scenario evaluator
+      run: |
+        python3 tools/colregs_evaluator.py
+
+    - name: Validate S-57 GeoJSON chart compilation
+      run: |
+        python3 tools/s57_chart_compiler.py --format geojson
