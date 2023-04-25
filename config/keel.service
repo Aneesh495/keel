@@ -1,0 +1,24 @@
+[Unit]
+Description=Keel Autonomous Maritime VTS and Collision Avoidance Daemon
+After=network.target network-online.target
+Wants=network-online.target
+Documentation=https://github.com/Aneesh495/keel
+
+[Service]
+Type=simple
+User=keel
+Group=keel
+WorkingDirectory=/opt/keel
+ExecStart=/opt/keel/bin/keel --config /etc/keel/keel_vts.json
+Restart=always
+RestartSec=5s
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+CPUSchedulingPolicy=rr
+CPUSchedulingPriority=50
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=keel-vts
+
+[Install]
+WantedBy=multi-user.target

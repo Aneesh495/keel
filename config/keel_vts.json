@@ -1,0 +1,39 @@
+{
+  "station": {
+    "sector_id": "UK-DOVER-VTS",
+    "station_name": "Dover Coastguard VTS Sector",
+    "call_sign": "DOVER COASTGUARD",
+    "reference_position": {
+      "latitude": 51.1279,
+      "longitude": 1.3134
+    },
+    "radar_range_nm": 24.0,
+    "elevation_m": 115.0
+  },
+  "ingestion": {
+    "udp_listen_port": 10110,
+    "buffer_size_kb": 1024,
+    "channels": ["A", "B"],
+    "packet_timeout_ms": 50
+  },
+  "safety_thresholds": {
+    "warning_cpa_nm": 1.50,
+    "warning_tcpa_seconds": 900.0,
+    "emergency_cpa_nm": 0.50,
+    "emergency_tcpa_seconds": 300.0,
+    "minimum_ukc_meters": 1.50,
+    "grounding_lookahead_seconds": 1200.0,
+    "anchor_swing_radius_meters": 150.0
+  },
+  "cartography": {
+    "s57_cells": [
+      "data/dover_strait_s57.geojson"
+    ],
+    "default_tide_elevation_meters": 1.20
+  },
+  "telemetry": {
+    "enable_json_rpc": true,
+    "rpc_port": 8080,
+    "broadcast_interval_ms": 1000
+  }
+}
