@@ -66,6 +66,6 @@ Undefined Behavior:      Zero (compiled under -Wall -Wextra -Werror -pedantic -s
 
 ### Bug Log 02: NMEA Sentence Tokenization Delimiter Merging (`strtok`)
 - **Symptom**: Ingestion of valid NMEA sentences containing empty sequential identifiers (e.g. `!AIVDM,1,1,,A,payload,0*CS`) failed validation with corrupted channel and payload tokens.
-- **Root Cause Analysis**: Standard POSIX `strtok` treats contiguous delimiter characters (`,,`) as a single delimiter, collapsing adjacent commas and shifting field indices.
-- **Correction Applied**: Replaced `strtok` with `strsep(&cursor, ",")`, which preserves empty tokens between consecutive delimiters.
+- **Root Cause Analysis**: `strtok` skips adjacent delimiters, which shifts field indices in NMEA sentences with empty fields.
+- **Correction Applied**: The parser splits one comma at a time with standard C `strchr`, preserving empty fields on both Linux and macOS.
 - **Regression Prevention**: Test case `test_nmea_aivdm_live_decoding` was added to ingest real-world single-part and multi-part NMEA sentences containing empty sequence fields and verify parsed MMSI and coordinates.
