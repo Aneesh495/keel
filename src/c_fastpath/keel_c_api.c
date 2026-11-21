@@ -184,7 +184,12 @@ bool keel_engine_feed_nmea(keel_engine_t *engine, const char *nmea) {
     int token_count = 0;
     char *cursor = buf;
     while (cursor && token_count < 10) {
-        tokens[token_count++] = strsep(&cursor, ",");
+        // Empty fields keep their positions, including the optional sequence ID.
+        tokens[token_count++] = cursor;
+        char *comma = strchr(cursor, ',');
+        if (!comma) break;
+        *comma = '\0';
+        cursor = comma + 1;
     }
     
     if (token_count < 6) return false;
