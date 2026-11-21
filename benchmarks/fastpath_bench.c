@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "keel_fastpath.h"
 #include "keel_c_api.h"
 #include <stdio.h>
